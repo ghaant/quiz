@@ -5,9 +5,19 @@ class QuizzesController < ApplicationController
   end
 
   def finish
-    @quiz.update_attributes(finished: true)
+    if @quiz.update(finished: true)
+      redirect_to :root
+    else
+      redirect_to @quiz, alert: 'Unable to finish the quiz.'
+    end
+  end
 
-    
+  def start
+    if @quiz.update(finished: false)
+      redirect_to :root
+    else
+      redirect_to @quiz, alert: 'Unable to start the quiz.'
+    end
   end
 
   private

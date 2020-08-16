@@ -1,13 +1,22 @@
 <h1><%= @quiz.title %></h1>
 <br>
 
-<table>
-  <tbody>
-    <%= render @quiz.questions %>
-  </tbody>
-</table>
+<% if @quiz.finished? %>
+  <h2>Your results</h2>
 
-<% if !@quiz.finished? %>
+  <p>You got right <%= @quiz.right_answeres_number %> questions out of <%= @quiz.questions_number %></p>
+
+  <%= button_to quiz_start_path(@quiz),
+      method: :patch do %>
+    Re-do the quiz
+  <% end %>
+<% else %>
+  <table>
+    <tbody>
+      <%= render @quiz.questions %>
+    </tbody>
+  </table>
+
   <%= button_to quiz_finish_path(@quiz),
       method: :patch do %>
     Finish
