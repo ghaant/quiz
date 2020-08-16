@@ -1,2 +1,8 @@
 <h1><%= @quiz.title %></h1>
 <br>
+
+<table>
+  <tbody>
+    <%= render @quiz.questions %>
+  </tbody>
+</table>
