@@ -25,3 +25,10 @@ Question.last.question_responses.create!([
                                           { text: 'skirt', correct: true },
                                           { text: 'car', correct: false }
                                         ])
+
+Quiz.last.questions.create!(text: 'What do we eat with a spoon?')
+Question.last.question_responses.create!([
+                                          { text: 'porridge', correct: true },
+                                          { text: 'sausage', correct: false },
+                                          { text: 'steak', correct: false }
+                                        ])
