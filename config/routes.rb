@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :quizzes
+  root to: 'quizzes#show'
+
   resources :user_responses
   resources :question_responses
   resources :questions
