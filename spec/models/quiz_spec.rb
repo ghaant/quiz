@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Quiz, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let!(:quiz) { FactoryBot.create(:quiz) }
+
+  it 'is valid' do
+    expect(quiz).to be_valid
+  end
 end
