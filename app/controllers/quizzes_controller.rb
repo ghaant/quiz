@@ -8,7 +8,7 @@ class QuizzesController < ApplicationController
     if @quiz.update(finished: true)
       redirect_to :root
     else
-      redirect_to @quiz, alert: 'Unable to finish the quiz.'
+      redirect_to :root, alert: 'Unable to finish the quiz.'
     end
   end
 
@@ -16,7 +16,7 @@ class QuizzesController < ApplicationController
     if @quiz.update(finished: false)
       redirect_to :root
     else
-      redirect_to @quiz, alert: 'Unable to start the quiz.'
+      redirect_to :root, alert: 'Unable to start the quiz.'
     end
   end
 
