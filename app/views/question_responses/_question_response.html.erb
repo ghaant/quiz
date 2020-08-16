@@ -3,7 +3,7 @@
     <%= check_box_tag 'checked', question_response.id, question_response.checked,
         data: {
           remote: true,
-          url: toggle_question_question_response_path(question_response.question, question_response),
+          url: question_response_toggle_path(question_response.question, question_response),
           method: :post
         }
     %>
