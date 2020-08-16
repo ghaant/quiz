@@ -6,3 +6,10 @@
     <%= render @quiz.questions %>
   </tbody>
 </table>
+
+<% if !@quiz.finished? %>
+  <%= button_to quiz_finish_path(@quiz),
+      method: :patch do %>
+    Finish
+  <% end %>
+<% end %>
